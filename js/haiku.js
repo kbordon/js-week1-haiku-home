@@ -56,6 +56,7 @@ export class Haiku {
       }
       // if word ends with an e, checks if letter two places before is a vowel. if true, subtracts from syllable count
       if(word.charAt(word.length-1).toUpperCase()=== "E" && vowels.includes(word.charAt(word.length - 3).toUpperCase())){
+        //write in code tomorrow to account for the such as if syllable count != 1
         syllableCount--;
       }
     });
