@@ -11,10 +11,12 @@ $(document).ready(function(){
       if (syllablesValid){
         $("#output").text("This is definitely a haiku! ✏️ 🌟🌟🌟");
       } else {
-        $("#output").text("This doesn't have the correct amount of syllables to be a haiku! 😡");
+        $("#output").text(`This doesn't have the correct amount of syllables to be a haiku! 😡line 1: ${newHaiku.syllables[0]}
+        line 2: ${newHaiku.syllables[1]}
+        line 3: ${newHaiku.syllables[2]}`);
       }
     } else {
-      $('#output').text("This doesn't have the correct amount of lines to be a haiku! 😡");
+      $('#output').text(`This doesn't have the correct amount of lines to be a haiku! 😡`);
     }
   });
 });
