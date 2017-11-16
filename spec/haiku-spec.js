@@ -49,6 +49,39 @@ describe('Haiku', function(){
     newHaiku.linesAreValid();
     expect(newHaiku.countSyllables(newHaiku.lines[0])).toEqual(1);
 
+  });
+
+  it(`it will count one sylllable for a multi-vowel syllable word`, function(){
+    let newHaiku = new Haiku(`boat
+      I'm on a
+      boat`);
+      newHaiku.linesAreValid();
+      expect(newHaiku.countSyllables(newHaiku.lines[0])).toEqual(1);
+  });
+
+  it(`it will not count a syllable if it is the letter e at the end of a word`, function(){
+    let newHaiku = new Haiku(`surface
+      surface
+      surface`);
+      newHaiku.linesAreValid();
+      expect(newHaiku.countSyllables(newHaiku.lines[0])).toEqual(2);
+  });
+
+  it(`it will count a syllable if it ends with the letter e at the end of a word and is preceeded by two consonants`, function(){
+    let newHaiku = new Haiku(`massacre
+      massacre
+      massacre`);
+      newHaiku.linesAreValid();
+      expect(newHaiku.countSyllables(newHaiku.lines[0])).toEqual(3);
+  });
+
+  it(`it will count a syllable of two adjacent vowels separately if followed by double consonants`, function(){
+    let newHaiku = new Haiku(`sienna
+      sienna
+      sienna`);
+      newHaiku.linesAreValid();
+      expect(newHaiku.countSyllables(newHaiku.lines[0])).toEqual(3);
   })
+
 
 });
