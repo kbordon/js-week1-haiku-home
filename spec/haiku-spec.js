@@ -81,7 +81,15 @@ describe('Haiku', function(){
       sienna`);
       newHaiku.linesAreValid();
       expect(newHaiku.countSyllables(newHaiku.lines[0])).toEqual(3);
-  })
+  });
 
+  it(`it will count the syllables of a line`, function() {
+    let newHaiku = new Haiku(`A bloody knife blade
+                              Is being licked by a cat
+                              At hog-killing time.`);
 
+    newHaiku.linesAreValid();
+    let result = newHaiku.validateSyllablesToLine();
+    expect(result).toEqual(true);
+  });
 });

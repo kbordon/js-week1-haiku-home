@@ -2,6 +2,7 @@ export class Haiku {
   constructor(text) {
     this.text = text;
     this.lines = [];
+    // this.syllables = [];
   }
 
   linesAreValid() {
@@ -53,13 +54,32 @@ export class Haiku {
             syllableCount++;
           }
         }
+        // if word has e, checks if is a silent e by seeing if letter two places before is a vowel. if true, subtracts from syllable count
+        if(word.charAt(i).toUpperCase()=== "E" && vowels.includes(word.charAt(i-2).toUpperCase())){
+          //write in code tomorrow to account for the such as if syllable count != 1
+          syllableCount--;
+        }
       }
-      // if word ends with an e, checks if letter two places before is a vowel. if true, subtracts from syllable count
-      if(word.charAt(word.length-1).toUpperCase()=== "E" && vowels.includes(word.charAt(word.length - 3).toUpperCase())){
+      // if word ends with an a, checks if letter before is an i. if true, subtracts from syllable count
+      if( word.charAt(word.length-1).toUpperCase()=== "A" && word.charAt(word.length - 2).toUpperCase() === "I" ){
         //write in code tomorrow to account for the such as if syllable count != 1
-        syllableCount--;
+        syllableCount++;
       }
     });
     return syllableCount;
   }
+
+  validateSyllablesToLine() {
+    // for (let i = 0; i < 3; i++)
+    // {
+    //   this.syllables.push(this.countSyllables(this.lines[i]));
+    // }
+    // if ()
+    if (this.countSyllables(this.lines[0]) === 5 && this.countSyllables(this.lines[1]) === 7 && this.countSyllables(this.lines[2]) === 5) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
