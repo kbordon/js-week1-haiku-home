@@ -87,11 +87,21 @@ gulp.task('bowerBuild', ['bower'], function(){
   browserSync.reload();
 });
 
+// use this if you're not using sass
 gulp.task("cssBuild", function() {
   gulp.src(['css/*.css'])
   .pipe(concat('vendor.css'))
   .pipe(gulp.dest('./build/css'))
 });
+
+// gulp.task('cssBuild', function() {
+//   return gulp.src('scss/*.scss')
+//     .pipe(sourcemaps.init())
+//     .pipe(sass())
+//     .pipe(sourcemaps.write())
+//     .pipe(gulp.dest('./build/css'))
+//     .pipe(browserSync.stream());
+// });
 
 gulp.task("clean", function(){
   return del(['build', 'tmp']);
