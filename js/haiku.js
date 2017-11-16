@@ -43,9 +43,10 @@ export class Haiku {
     const vowels = ["A","E","I","O","U","Y"];
     wordArr.forEach(function(word){
       for (let i = 0; i < word.length; i++) {
-        
+        // checks if letter is vowel and letter before it is not a vowel, and adds to syllable count if true
         if(vowels.includes(word.charAt(i).toUpperCase()) && !vowels.includes(word.charAt(i-1).toUpperCase())){
           syllableCount++;
+        // if two vowels next to each other, checks if followed by double consonant letters and adds to syllable count if true
         } else if (vowels.includes(word.charAt(i).toUpperCase()) && vowels.includes(word.charAt(i-1).toUpperCase()) )
         {
           if( word.charAt(i+1) == word.charAt(i+2) && word.charAt(i+1) != "" && !vowels.includes(word.charAt(i+1).toUpperCase())){
@@ -53,6 +54,7 @@ export class Haiku {
           }
         }
       }
+      // if word ends with an e, checks if letter two places before is a vowel. if true, subtracts from syllable count
       if(word.charAt(word.length-1).toUpperCase()=== "E" && vowels.includes(word.charAt(word.length - 3).toUpperCase())){
         syllableCount--;
       }
@@ -60,5 +62,3 @@ export class Haiku {
     return syllableCount;
   }
 }
-
-//
