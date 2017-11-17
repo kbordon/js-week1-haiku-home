@@ -17,6 +17,9 @@ _This is an application that will determine if a potential haiku meets haiku lin
 ## Known Bugs
 AFAIK, no bugs are known. However, there so many exceptions in the English language, so likely they haven't been accounted for. Please let us know if you spot any.
 
+NEVER MIND. Doesn't work for the word "liar."
+
+
 ## Contact
 If you have any questions, comments, or concerns, please contact Elliot or Kim
 
