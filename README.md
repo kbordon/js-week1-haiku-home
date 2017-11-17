@@ -18,6 +18,8 @@ _This is an application that will determine if a potential haiku meets haiku lin
 AFAIK, no bugs are known. However, there so many exceptions in the English language, so likely they haven't been accounted for. Please let us know if you spot any.
 
 NEVER MIND. Doesn't work for the word "liar."
+-broken
+-silent
 
 
 ## Contact
